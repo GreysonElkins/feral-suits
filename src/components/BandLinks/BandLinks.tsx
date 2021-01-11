@@ -11,35 +11,68 @@ export type link = {
   link: string
 }
 
-const BandLinks:React.FC = () => {
+type linkProps = {
+  requestedLinkItems?: Array<string>
+  providedLinkItems?: link[]
+}
+
+const BandLinks:React.FC<linkProps> = ({ requestedLinkItems, providedLinkItems }) => {
 
   const filterLinksByType = (type:string, links:link[]):link[] => {
     return links.filter(link => link.type === type)
   }
 
-  const createIcons = (type?:string):React.ReactNode => {
-    const links = type ? filterLinksByType(type, linkInfo) : linkInfo
-    const icons = links.map(({name, link, icon, title, type}, i) => (
+  const createIcon = ({name, link, icon, title, type}:link) => {
+    return (
       <a 
         href={link} 
         title={title} 
-        key={`${type}-link-${i}`}
+        key={`${name}-link`}
       >
         <img 
           className="media-icon"
           src={icon} 
           alt={`${name} icon`} 
-          key={`${type}-icon-${i}`}
+          key={`${name}-icon`}
         />
       </a>
-    ))
-    return <div className="icon-set">{icons}</div>
+    )
   }
 
+  const createMultipleIcons = (links:link[]) => {
+    const icons = links.map(link => createIcon(link))
+    return <div>{icons}</div>
+  }
+
+  const findDefinedLinks = ():link[] => {
+    return linkInfo.filter((link:link) => requestedLinkItems!.includes(link.name))
+  }
+
+  const createDefaultIcons = ():React.ReactNode => {
+    const socialLinks = filterLinksByType('social', linkInfo)
+    const mediaLinks = filterLinksByType('media', linkInfo)
+    return (
+      <div>
+        {createMultipleIcons(socialLinks)}
+        {createMultipleIcons(mediaLinks)}
+      </div>
+    )
+  }
+
+  const createIcons = ():React.ReactNode => {
+    if (requestedLinkItems) {
+      const links = findDefinedLinks()
+      return createMultipleIcons(links)
+    } else if (providedLinkItems) {
+      return createMultipleIcons(providedLinkItems)
+    } else {
+      return createDefaultIcons()
+    }
+  }
+    
   return (
     <div>
-      {createIcons("social")}
-      {createIcons("media")}
+      {createIcons()}
     </div>
   )
 }
