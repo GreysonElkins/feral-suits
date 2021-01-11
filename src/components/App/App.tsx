@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import allRoutes from '../../routes'
 import './App.scss';
 
 const App:React.FC = () => {
-  // const [isLaoding, setIsLoading] = useState<boolean>(false)
 
   const mapRoutes = ():React.ReactNode[] => {
     return allRoutes.map((route, i) => (
