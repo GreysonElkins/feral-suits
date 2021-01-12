@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+import Header from '../Header/Header'
 import allRoutes from '../../routes'
 import './App.scss';
 
@@ -17,10 +18,14 @@ const App:React.FC = () => {
   }
 
   return (
-    <div className="App">
-      <Switch>
-        {mapRoutes()}
-      </Switch>
+    <div itemScope itemType="http://schema.org/MusicGroup">
+      <div className="App">
+        <Header hiddenNav={true}/>
+        <Header />
+        <Switch>
+          {mapRoutes()}
+        </Switch>
+      </div>
     </div>
   );
 }
