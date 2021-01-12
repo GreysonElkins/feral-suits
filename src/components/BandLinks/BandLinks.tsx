@@ -30,7 +30,7 @@ const BandLinks:React.FC<linkProps> = ({ requestedLinkItems, providedLinkItems }
         key={`${name}-link`}
       >
         <img 
-          className="media-icon"
+          className="external-icon"
           src={icon} 
           alt={`${name} icon`} 
           key={`${name}-icon`}

@@ -1,8 +1,27 @@
+@import '../../assets/variables.scss';
 
+@media only screen and (min-height: 500px) {
+  
+  .foot-links {
+    bottom: 0;
+    padding-bottom: .75em;
+    position: absolute;
+    width: 100%;
+  }
+}
 
-.foot-links {
-  bottom: 0;
-  padding-bottom: .75em;
-  position: absolute;
-  width: 100%;
+.ComingSoon {
+  display:flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: center;
+  align-items: space-between;
+  width: 100vw;
+}
+
+.coming-soon-text {
+  color: $gold;
+  height: min-content;
+  font-style:italic;
+  transform: rotate(-20deg)
 }

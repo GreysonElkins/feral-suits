@@ -6,7 +6,7 @@ import './ComingSoon.scss'
 const ComingSoon:React.FC = () => {
   return (
     <div className="ComingSoon">
-      <h1>Coming Soon</h1>
+      <h2 className="coming-soon-text">Coming Soon</h2>
       <div className="foot-links">
         <BandLinks />
       </div>
