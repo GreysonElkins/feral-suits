@@ -13,7 +13,7 @@ const Header:React.FC<headerProps> = ({ hiddenNav }) => {
   const buildNav = ():React.ReactNode => {
     const onlyPublicRoutes = routes.filter(({ visible }) => visible)
     const links = onlyPublicRoutes.map(({ path }) => (
-      <NavLink to={path}>{path.substring(1)}</NavLink>
+      <NavLink to={path} key={path}>{path.substring(1)}</NavLink>
     ))
     return (<nav>{links}</nav>)
   }

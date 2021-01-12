@@ -8,6 +8,19 @@ header, nav {
   display: flex;
 }
 
+.band-name, .active { 
+  color: $gold;
+}
+
+.band-name {
+  text-decoration: none;
+}
+
+a, .inactive {
+  color: $white;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 520px) {
   header {
     flex-direction: column;
@@ -46,36 +59,4 @@ header, nav {
   nav {
     width: 25%;
   }
-
-  // .band-name, nav {
-  //   margin: 20px;
-  // }
-  // .band-name, nav {
-  //   margin: 75px;
-  // }
-}
-
-// @media only screen and (max-width: 652px) {
-
-
-// }
-
-
-// header, nav {
-//   display: flex;
-
-// }
-
-
-.band-name, .active { 
-  color: $gold;
-}
-
-.band-name {
-  text-decoration: none;
-}
-
-a, .inactive {
-  color: $white;
-  text-decoration: none;
 }
