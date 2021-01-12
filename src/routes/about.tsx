@@ -3,7 +3,7 @@ import { route } from './index'
 
 const aboutRoute:route = {
   path: '/about',
-  public: true,
+  visible: true,
   component: About
 }
 

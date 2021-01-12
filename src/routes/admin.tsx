@@ -3,7 +3,7 @@ import { route } from './index'
 
 const adminRoute:route = {
   path: "/admin",
-  public: false,
+  visible: false,
   component: Admin
 }
 

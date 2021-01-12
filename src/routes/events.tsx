@@ -3,7 +3,7 @@ import { route } from './index'
 
 const eventsRoute: route = {
   path: "/events",
-  public: true,
+  visible: true,
   component: Events
 }
 

@@ -4,7 +4,7 @@ import { route } from './index'
 
 const homeRoute:route = {
   path: '/',
-  public: true,
+  visible: false,
   component: ComingSoon
 }
 

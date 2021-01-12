@@ -3,7 +3,7 @@ import { route } from './index'
 
 const musicRoute:route = {
   path: '/music',
-  public: true,
+  visible: true,
   component: Music 
 }
 

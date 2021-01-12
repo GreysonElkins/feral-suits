@@ -6,7 +6,7 @@ import musicRoute from './music'
 
 export type route = {
   path: string
-  public: boolean
+  visible: boolean
   component: React.FC
 }
 
