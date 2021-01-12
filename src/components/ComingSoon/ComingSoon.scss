@@ -1,0 +1,52 @@
+@import '../../assets/variables.scss';
+
+.foot-links {
+  margin-top: 1em;
+}
+
+.body-image {
+  z-index: -1;
+  object-fit: cover;
+  background: url('../../assets/images/lost-lake.jpg') no-repeat;
+  position: absolute;
+  height: 125vh;
+  width: 100vw;
+  margin-top: -8em;
+  opacity: .2;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.ComingSoon {
+  display:flex;
+  flex-direction: column;
+  width: 100vw;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25em;
+  width: 100%;
+}
+
+.coming-soon-text {
+  color: $gold;
+  height: min-content;
+  opacity: 1;
+  font-style: italic;
+  transform: rotate(-20deg);
+}
+
+.foot-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute; 
+  bottom: 0;
+}
