@@ -42,6 +42,6 @@ describe('Header With Nav', () => {
 
   it('should render 3 additional links to the band name', () => {
     const links = screen.getAllByRole('link')
-    expect(links).toHaveLength(3)
+    expect(links).toHaveLength(4)
   })
 })

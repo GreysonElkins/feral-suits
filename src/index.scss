@@ -2,10 +2,10 @@
 
 body {
   color: $white;
-  background-color: $grayOne;
+  background-color: $black;
   height: 100%;
   margin: 0;
-  overflow: scroll;
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,6 +15,7 @@ body {
 
 h1 {
   margin: 0;
+  font-size: 3em;
 }
 
 code {
