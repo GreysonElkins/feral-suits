@@ -1,0 +1,81 @@
+@import '../../assets/variables.scss';
+
+h1 {
+  margin: 0;
+}
+
+header, nav { 
+  display: flex;
+}
+
+@media only screen and (max-width: 520px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+  nav {
+    justify-content: space-around;
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 521px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  header, nav {
+    align-items: flex-start;
+  }
+  
+  nav {
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 670px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    width: 25%;
+  }
+
+  // .band-name, nav {
+  //   margin: 20px;
+  // }
+  // .band-name, nav {
+  //   margin: 75px;
+  // }
+}
+
+// @media only screen and (max-width: 652px) {
+
+
+// }
+
+
+// header, nav {
+//   display: flex;
+
+// }
+
+
+.band-name, .active { 
+  color: $gold;
+}
+
+.band-name {
+  text-decoration: none;
+}
+
+a, .inactive {
+  color: $white;
+  text-decoration: none;
+}
