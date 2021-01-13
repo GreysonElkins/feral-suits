@@ -1,7 +1,6 @@
 import React from 'react'
 import BandLinks from '../BandLinks/BandLinks'
 
-import lostLake from '../../assets/images/lost-lake.jpg'
 import './ComingSoon.scss'
 
 const ComingSoon:React.FC = () => {
