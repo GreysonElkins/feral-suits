@@ -30,23 +30,14 @@
 .banner {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  height: 25em;
   width: 100%;
 }
 
 .coming-soon-text {
-  color: $gold;
+  color: $white;
   height: min-content;
   opacity: 1;
   font-style: italic;
-  transform: rotate(-20deg);
-}
-
-.foot-links {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: absolute; 
-  bottom: 0;
 }
