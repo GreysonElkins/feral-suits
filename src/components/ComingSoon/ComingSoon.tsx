@@ -8,7 +8,7 @@ const ComingSoon:React.FC = () => {
     <div className="ComingSoon">
       <div className="banner">
           <h2 className="coming-soon-text">
-            Website coming Soon
+            Website coming soon
           </h2>
           <p>In the meantime, find us on your favorite platforms:</p>
       </div>
