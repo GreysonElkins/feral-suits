@@ -29,7 +29,7 @@ class Track {
   }
 }
 
-class Album {
+export class Album {
   name: string
   releaseDate: string 
   streamEmbed: React.ReactNode
@@ -90,8 +90,8 @@ const traipseSingle = new Album(
   "Traipse of Youth", 
   "July 20 2018", 
   <iframe 
-    style={{border: "0", width: "350px", height: "442px"}} 
-    src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" 
+    style={{ border: 0, width: "100%", height: "120px" }} 
+    src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=none/transparent=true/" 
     seamless
   >
     <a href="https://feralsuits.bandcamp.com/track/traipse-of-youth">
@@ -112,8 +112,8 @@ const traipseSingle = new Album(
     "Spokane & Poughkeepsie", 
     "January 20, 2020", 
     <iframe 
-      style={{border: 0, width: "350px", height: "442px"}} 
-      src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" 
+      style={{ border: 0, width: "100%", height: "120px" }}
+      src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=none/transparent=true/" 
       seamless
     >
       <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie">
@@ -128,4 +128,4 @@ const traipseSingle = new Album(
 
   feralAlbums.addAlbum(spokaneSingle)
 
-export {}
+export default feralAlbums
