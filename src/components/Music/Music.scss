@@ -1,0 +1,14 @@
+.album {
+  display: flex;
+  justify-content: center;
+}
+
+.art-and-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.album-art {
+  width: 20em;
+}
