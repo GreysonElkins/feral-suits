@@ -8,7 +8,7 @@ describe('ComingSoon', () => {
   })
 
   it('Should display text "Coming Soon', () => {
-    const text = screen.getByText('Coming Soon')
+    const text = screen.getByText('coming soon')
     expect(text).toBeInTheDocument()
   })
 
