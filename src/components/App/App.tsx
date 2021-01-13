@@ -20,7 +20,7 @@ const App:React.FC = () => {
   return (
     <div itemScope itemType="http://schema.org/MusicGroup">
       <div className="App">
-        <Header hiddenNav={true}/>
+        <Header />
         <Switch>
           {mapRoutes()}
         </Switch>

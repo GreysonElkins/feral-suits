@@ -10,6 +10,6 @@ export type route = {
   component: React.FC
 }
 
-const allRoutes:route[] =  [aboutRoute, adminRoute, eventsRoute, homeRoute, musicRoute]
+const allRoutes:route[] =  [musicRoute, eventsRoute, aboutRoute, adminRoute, homeRoute]
 
 export default allRoutes
