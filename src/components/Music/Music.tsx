@@ -1,7 +1,7 @@
 import React, {useReducer, useState, useEffect} from 'react'
 
 import { albumViewUpdate, albumView, stringKeyOptions } from './definitions'
-import feralAlbums, { Album } from './discography'
+import feralAlbums, { Album, Track } from './discography'
 
 import './Music.scss'
 
@@ -25,9 +25,16 @@ const Music:React.FC = () => {
   const createAlbumCards = ():React.ReactNode[] => {
     return feralAlbums.albums.map((album) => {
       return (
-        <div className="album">
+        <div className="album" itemScope itemType="https://schema.org/MusicAlbum">
+          <meta content={album.tracks.length.toString()}itemProp="numTracks" />
+          <meta content="Rock" itemProp="genre" />
+          <meta content={album.listenLink} itemProp="url" />
+          <meta
+            content="Feral Suits"
+            itemProp="byArtist" 
+            itemScope itemType="https://schema.org/MusicGroup" />
           <div className="nav-and-title">
-            <h3>{album.name}</h3>
+            <h3 itemProp="name">{album.name}</h3>
             <div className="info-select">
               <button
                 className={selectInfoButton(album.name, albumView.Tracks)}
@@ -52,6 +59,7 @@ const Music:React.FC = () => {
           </div>
           <div className="more-info">
             <img 
+              itemProp="image"
               src={album.art} 
               alt={`Album art for ${album.name}`} 
               className="album-art"
@@ -91,9 +99,11 @@ const Music:React.FC = () => {
     const tracks = album.tracks.map((track) => {
       return (
         <>
-          <div className="track-row">
-            <span>
-              {track.name}
+          <div className="track-row" itemScope itemType="https://schema.org/MusicRecording">
+            <meta content={`PT${Math.floor(track.duration / 60)}M${track.duration % 60}S`} />
+            <meta content={album.name} itemType="inAlbum" />
+            <span itemProp="name">
+              <span className="track-name">{track.name}</span> {createContributor(track)}
             </span>
             <button
               className="info-button lyric-button"
@@ -147,6 +157,22 @@ const Music:React.FC = () => {
       return 'selected-info-button'
     } else {
       return 'info-button'
+    }
+  }
+  
+  const createContributor = (track:Track) => {
+    let list;
+    if (track.feature) {
+      list = track.feature.reduce((features:React.ReactNode[], feature):React.ReactNode[] => {
+        features.push(
+          <span itemType="https://schema.org/MusicRecording">
+            <meta content={track.name} itemProp="name" />
+            <span itemProp="contributor" itemType="https://schema.org/MusicGroup" className="contributor">: {feature}</span>
+          </span>
+        )
+        return features
+      }, [])
+      return <span>| features{list}</span>
     }
   }
 
