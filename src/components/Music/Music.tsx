@@ -15,55 +15,22 @@ const changeAlbumInfoView = (state: object, albumViewUpdate:albumViewUpdate):str
 const Music:React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [albumInfoView, dispatchAlbumInfoView] = useReducer(changeAlbumInfoView, {})
+  const [displayLyrics, setDisplayLyrics] = useState<string[] | undefined>(undefined)
 
   useEffect(() => {
     feralAlbums.albums.forEach((album:Album) => dispatchAlbumInfoView({type: album.name}))
     setIsLoading(false)
   }, [isLoading])
 
-  const createMoreInfoSection = (album:Album) => {
-    if (albumInfoView[album.name] === albumView.Tracks) {
-      return createTrackList(album) 
-    } else {
-      return album.streamEmbed
-    }
-  }
-
-  const createTrackList = (album:Album) => {
-    return album.tracks.map((track) => {
-      return (
-        <div className="track-row">
-          <span>
-            {track.name}
-          </span>
-          <span>
-            {track.printDuration()}
-          </span>
-          <button
-            onClick={() => console.log(track.lyrics)}
-          >
-            lyrics
-          </button>
-        </div>
-      )
-    })
-  }
-
   const createAlbumCards = ():React.ReactNode[] => {
     return feralAlbums.albums.map((album) => {
       return (
         <div className="album">
-          <div className="art-and-title">
+          <div className="nav-and-title">
             <h3>{album.name}</h3>
-            <img 
-              src={album.art} 
-              alt={`Album art for ${album.name}`} 
-              className="album-art"
-              />
-          </div>
-          <div className="more-info">
             <div className="info-select">
               <button
+                className={selectInfoButton(album.name, albumView.Tracks)}
                 onClick={(event)=> {
                   event.preventDefault()
                   dispatchAlbumInfoView({type: album.name, value: albumView.Tracks})
@@ -72,6 +39,7 @@ const Music:React.FC = () => {
               >
                 Tracks</button>
               <button
+                className={selectInfoButton(album.name, albumView.Stream)}
                 onClick={(event)=> {
                   event.preventDefault()
                   dispatchAlbumInfoView({type: album.name, value: albumView.Stream})
@@ -81,19 +49,114 @@ const Music:React.FC = () => {
                 Stream
               </button>
             </div>
-            <div>
+          </div>
+          <div className="more-info">
+            <img 
+              src={album.art} 
+              alt={`Album art for ${album.name}`} 
+              className="album-art"
+              />
               {createMoreInfoSection(album)}
-            </div>
           </div>
         </div>
       )
     })
   }
 
+  const createMoreInfoSection = (album:Album) => {
+    if (albumInfoView[album.name] === albumView.Tracks) {
+      return createTrackList(album) 
+    } else {
+      return (
+        <div className="streaming-embed">
+          {album.streamEmbed ? album.streamEmbed : notifyUnavailable()}
+        </div>
+      )
+    }
+  }
+
+  const notifyUnavailable = ():React.ReactNode => {
+    return (
+      <span>
+        This hasn't been released yet - follow us on <a 
+          className="intentional-link"
+          href="https://open.spotify.com/artist/3NS8aEjC3lH0xDynDB7zZK?si=oEbtbHcdTbiPXUwnWUzqAw">
+            Spotify
+        </a> so you know when it is!
+      </span>
+    )
+  }
+
+  const createTrackList = (album:Album) => {
+    const tracks = album.tracks.map((track) => {
+      return (
+        <>
+          <div className="track-row">
+            <span>
+              {track.name}
+            </span>
+            <button
+              className="info-button lyric-button"
+              onClick={() => setDisplayLyrics(track.lyrics)}
+            >
+              lyrics
+            </button>
+          </div>
+          <hr style={{width: "100%"}}/> 
+        </>
+      )
+    })
+
+    return <div className="track-list">{tracks}</div>
+  }
+
+  const printLyrics = ():React.ReactNode => {
+    let lyricSheet: React.ReactNode | undefined;
+    if(Array.isArray(displayLyrics)) {
+      lyricSheet = displayLyrics.reduce((lyrics:React.ReactNode[], line):React.ReactNode[] => {
+        if (line === " ") {
+          lyrics.push(<><br /></>)
+        } else {
+          lyrics.push(<>{line}<br /></>)
+        }
+        return lyrics
+      }, [])
+    }
+
+    return <p>{lyricSheet}</p>;
+  }
+
+  const showLyrics = ():React.ReactNode => {
+    return (
+      <>
+        <div className="black-out"></div>
+        <div className="lyric-container" onClick={() => {setDisplayLyrics(undefined)}}>
+          <div className="lyric-sheet" onClick={() => {}}>
+            {printLyrics()}
+          </div>
+          <button className="close-button">
+            close
+          </button>
+        </div>
+      </>
+    )
+  }
+
+  const selectInfoButton = (albumName:string, type:string):string => {
+    if (albumInfoView[albumName] === type) {
+      return 'selected-info-button'
+    } else {
+      return 'info-button'
+    }
+  }
+
   return (
-    <>
+    <div className="discography">
       {createAlbumCards()}
-    </>
+      {displayLyrics && 
+        showLyrics()
+      }
+    </div>
   )
 }
 
