@@ -1,7 +1,19 @@
 import traipseArt from '../../assets/images/traipse.jpg'
 import spokaneArt from '../../assets/images/spokane.jpg'
 
-import { traipseLyrics, spokaneLyrics } from './lyrics'
+import { 
+  traipseLyrics, 
+  firstCar, 
+  spokaneLyrics, 
+  funk, 
+  soft, 
+  nextToMe, 
+  light, 
+  daybreaker, 
+  hung, 
+  anymore, 
+  lavender 
+} from './lyrics'
 
 class Track { 
   name: string
@@ -33,7 +45,7 @@ export class Album {
   name: string
   releaseDate: string 
   streamEmbed: React.ReactNode
-  art: string
+  art: string | undefined
   tracks: Track[]
   type:string
 
@@ -41,7 +53,7 @@ export class Album {
     name:string, 
     releaseDate:string, 
     streamEmbed:React.ReactNode | undefined, 
-    art:string,
+    art:string | undefined,
     type:string
     ) {
       this.name = name 
@@ -100,31 +112,60 @@ const traipseSingle = new Album(
   </iframe>,
   traipseArt,
   "single",
-   )
+  )
 
-  traipseSingle.addTrack(traipseOfYouth)
+traipseSingle.addTrack(traipseOfYouth)
 
-  const spokane = new Track("Spokane & Poughkeepsie", 0, 168)
-  spokane.addLyrics(spokaneLyrics)
-  const spokaneSingle = new Album(
-    "Spokane & Poughkeepsie", 
-    "January 20, 2020", 
-    <iframe 
-      style={{ border: 0, width: "100%", height: "120px" }}
-      src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/" 
-      seamless
-    >
-      <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie">
-        Spokane &amp; Poughkeepsie by Feral Suits
-      </a>
-    </iframe>,
-    spokaneArt,
-    "single"
-    ) 
-    
-  spokaneSingle.addTrack(spokane)
+const spokane = new Track("Spokane & Poughkeepsie", 0, 168)
+spokane.addLyrics(spokaneLyrics)
+const spokaneSingle = new Album(
+  "Spokane & Poughkeepsie", 
+  "January 20, 2020", 
+  <iframe 
+    style={{ border: 0, width: "100%", height: "120px" }}
+    src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/" 
+    seamless
+  >
+    <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie">
+      Spokane &amp; Poughkeepsie by Feral Suits
+    </a>
+  </iframe>,
+  spokaneArt,
+  "single"
+  ) 
+  
+spokaneSingle.addTrack(spokane)
 
-  feralAlbums.addAlbum(spokaneSingle)
-  feralAlbums.addAlbum(traipseSingle)
+
+
+const trackOne = new Track("My First Car", 1, 240)
+const trackTwo = spokane
+trackTwo.trackNumber = 2
+const trackThree = new Track("From a Funk", 3, 210)
+const trackFour = new Track("Soft Spot", 4, 350)
+const trackFive = new Track("Next To Me (Homely)", 5, 329)
+const trackSix = new Track("Light", 6, 258)
+const trackSeven = new Track("Daybreaker", 7, 267)
+const trackEight = new Track("Hung by the Hook", 8, 199)
+const trackNine = new Track("Anymore", 9, 384)
+const trackTen = new Track("Lavender Rabbits", 10, 314)
+
+trackOne.addLyrics(firstCar)
+trackThree.addLyrics(funk)
+trackFour.addLyrics(soft)
+trackFive.addLyrics(nextToMe)
+trackSix.addLyrics(light)
+trackSeven.addLyrics(daybreaker)
+trackEight.addLyrics(hung)
+trackNine.addLyrics(anymore)
+trackTen.addLyrics(lavender)
+
+const LPone = new Album("TBD", "TBA", undefined, undefined, "record")
+
+LPone.addTracks([trackOne, trackTwo, trackThree, trackFour, trackFive, trackSix, trackSeven, trackEight, trackNine, trackTen])
+
+feralAlbums.addAlbum(LPone)
+feralAlbums.addAlbum(spokaneSingle)
+feralAlbums.addAlbum(traipseSingle)
 
 export default feralAlbums
