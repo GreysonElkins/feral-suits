@@ -15,11 +15,12 @@ import {
   lavender 
 } from './lyrics'
 
-class Track { 
+export class Track { 
   name: string
   duration: number
   lyrics: string[]
   trackNumber: number
+  feature?: string[] | undefined
 
   constructor(
     name:string,
@@ -30,6 +31,7 @@ class Track {
     this.trackNumber = trackNumber
     this.duration = duration
     this.lyrics = []
+    this.feature = undefined
   }
 
   addLyrics = (lyrics:string[]) => {
@@ -48,13 +50,15 @@ export class Album {
   art: string | undefined
   tracks: Track[]
   type:string
+  listenLink:string
 
   constructor(
     name:string, 
     releaseDate:string, 
     streamEmbed:React.ReactNode | undefined, 
     art:string | undefined,
-    type:string
+    type:string,
+    listenLink:string
     ) {
       this.name = name 
       this.releaseDate = releaseDate
@@ -62,6 +66,7 @@ export class Album {
       this.tracks = []
       this.type = type
       this.streamEmbed = streamEmbed 
+      this.listenLink = listenLink
     }
 
   addTrack = (track:Track) => {
@@ -102,6 +107,7 @@ const traipseSingle = new Album(
   "Traipse of Youth", 
   "July 20 2018", 
   <iframe 
+    title="Traipse@bandcamp"
     style={{ border: 0, width: "100%", height: "120px" }}
     src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/" 
     seamless
@@ -112,6 +118,7 @@ const traipseSingle = new Album(
   </iframe>,
   traipseArt,
   "single",
+  'https://feralsuits.bandcamp.com/track/traipse-of-youth'
   )
 
 traipseSingle.addTrack(traipseOfYouth)
@@ -122,6 +129,7 @@ const spokaneSingle = new Album(
   "Spokane & Poughkeepsie", 
   "January 20, 2020", 
   <iframe 
+    title="spokane@bandcamp"
     style={{ border: 0, width: "100%", height: "120px" }}
     src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/" 
     seamless
@@ -131,7 +139,8 @@ const spokaneSingle = new Album(
     </a>
   </iframe>,
   spokaneArt,
-  "single"
+  "single",
+  'https://feralsuits.bandcamp.com/track/spokane-poughkeepsie'
   ) 
   
 spokaneSingle.addTrack(spokane)
@@ -153,6 +162,7 @@ const trackTen = new Track("Lavender Rabbits", 10, 314)
 trackOne.addLyrics(firstCar)
 trackThree.addLyrics(funk)
 trackFour.addLyrics(soft)
+trackFour.feature = ['Jamie Nagode', 'David Bernot']
 trackFive.addLyrics(nextToMe)
 trackSix.addLyrics(light)
 trackSeven.addLyrics(daybreaker)
@@ -160,7 +170,7 @@ trackEight.addLyrics(hung)
 trackNine.addLyrics(anymore)
 trackTen.addLyrics(lavender)
 
-const LPone = new Album("TBD", "TBA", undefined, undefined, "record")
+const LPone = new Album("TBD", "TBA", undefined, undefined, "record", '')
 
 LPone.addTracks([trackOne, trackTwo, trackThree, trackFour, trackFive, trackSix, trackSeven, trackEight, trackNine, trackTen])
 
