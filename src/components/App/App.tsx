@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import Header from '../Header/Header'
+import BandLinks from '../../components/BandLinks/BandLinks'
 import allRoutes from '../../routes'
 import './App.scss';
 
@@ -24,6 +25,9 @@ const App:React.FC = () => {
         <Switch>
           {mapRoutes()}
         </Switch>
+        <div className="foot">
+          <BandLinks requestedLinkItems={["Spotify", "Apple Music", "BandCamp", "SoundCloud", "Instagram", "Facebook"]}/>
+        </div>
       </div>
     </div>
   );
