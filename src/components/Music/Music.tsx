@@ -34,7 +34,12 @@ const Music:React.FC = () => {
             itemProp="byArtist" 
             itemScope itemType="https://schema.org/MusicGroup" />
           <div className="nav-and-title">
-            <h3 itemProp="name">{album.name}</h3>
+            <div className="title-section">
+              <h3 itemProp="name">{album.name}</h3>
+              <span className="album-length">
+                | {album.tracks.length} song{album.tracks.length > 1 && 's'} | {album.printDuration()}
+              </span>
+            </div>
             <div className="info-select">
               <button
                 className={selectInfoButton(album.name, albumView.Tracks)}
@@ -102,9 +107,12 @@ const Music:React.FC = () => {
           <div className="track-row" itemScope itemType="https://schema.org/MusicRecording">
             <meta content={`PT${Math.floor(track.duration / 60)}M${track.duration % 60}S`} />
             <meta content={album.name} itemType="inAlbum" />
-            <span itemProp="name">
-              <span className="track-name">{track.name}</span> {createContributor(track)}
-            </span>
+            <div>
+              <span style={{opacity: ".7"}}>{track.trackNumber} - </span>
+                <span itemProp="name">
+                  <span className="track-name">{track.name}</span> {createContributor(track)}
+                </span>
+            </div>
             <button
               className="info-button lyric-button"
               onClick={() => setDisplayLyrics(track.lyrics)}
