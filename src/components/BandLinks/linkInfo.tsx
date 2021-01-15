@@ -29,7 +29,7 @@ const linkInfo:link[] = [{
   icon: './icons/soundcloud.svg',
   title: 'Listen to Feral Suits on SoundCloud',
   type: 'media',
-  link: 'https://soundcloud.com/search?q=feral%20suits'
+  link: 'https://soundcloud.com/feralsuits'
 }, {
   name: 'BandCamp',
   icon: './icons/bandcamp-logo.svg',
