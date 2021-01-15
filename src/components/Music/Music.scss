@@ -12,13 +12,25 @@
   justify-content: space-between;
 }
 
+.title-section {
+  display: flex;
+  align-items: center;
+}
+
+.album-length {
+  opacity: .7;
+  margin: 0 .5em;
+}
+
 .more-info {
   display: flex;
   height: min-content;
+  margin-bottom: 2.5em;
 }
 
 .album-art {
-  width: 10em;
+  width: 15em;
+  height: 15em;
 }
 
 .streaming-embed {
@@ -32,9 +44,10 @@
 .track-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   overflow: scroll;
   width: 100%;
+  height: 15em;
   padding-left: 10px;
 }
 
