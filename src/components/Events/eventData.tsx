@@ -1,3 +1,8 @@
+import circle from '../../assets/images/show-fliers/circle.jpg'
+import dutches from '../../assets/images/show-fliers/dutches.jpg'
+import gringo from '../../assets/images/show-fliers/gringo.jpg'
+import tempDazzle from '../../assets/images/show-fliers/temp-dazzle.jpg'
+
 export class Performer {
   name: string
   link?: string
@@ -13,6 +18,7 @@ export class Performer {
 export class Event {
   title: string
   location: string
+  image: string
   date: string
   startTime: string
   endTime: string
@@ -28,6 +34,7 @@ export class Event {
   constructor (
     title: string,
     location: string,
+    image: string,
     date: string,
     startTime: string,
     endTime: string,
@@ -42,6 +49,7 @@ export class Event {
     ) {
     this.title = title
     this.location = location
+    this.image = image
     this.date = date
     this.startTime = startTime
     this.endTime = endTime
@@ -71,6 +79,7 @@ const turvyOrgan = new Performer('Turvey Organ', 'https://www.facebook.com/turvy
 const seventhCircleMarch = new Event(
   'Feral Suits @ Seventh Circle',
   'Seventh Circle Music Collective',
+  circle,
   '03/28/2020',
   '7 PM',
   '11PM',
@@ -87,6 +96,7 @@ const seventhCircleMarch = new Event(
 const lunchDuchSyntax = new Event(
   'Feral Suits with Lunch Dutchess',
   'Syntax Physic Opera',
+  dutches,
   '10/28/2018',
   '8 PM',
   '11:59PM',
@@ -103,6 +113,7 @@ const lunchDuchSyntax = new Event(
 const lostLakeGringo = new Event(
   "Girngo Star's Album Release Party", 
   "Lost Lake and Colorado Public Radio's Open Air",
+  gringo,
   '09/25/2018',
   '7 PM',
   '11:59 PM',
@@ -119,7 +130,8 @@ const lostLakeGringo = new Event(
 const dazzlAlbumRelease = new Event(
   "Feral Suits Album Release Party",
   "Dazzle Denver",
-  'TBD',
+  tempDazzle,
+  '03/01/2020',
   '7 PM',
   '8 PM',
   "In celebration of their first album, Feral Suits will be live-streaming a perfromance from one of the most emminent Jazz Clubs in the nation, Dazzle Denver. Tune in from the comfort of your home for good vibes.",
@@ -131,3 +143,7 @@ const dazzlAlbumRelease = new Event(
   'Denver, CO',
   'Free'
 )
+
+const shows = [dazzlAlbumRelease, lostLakeGringo, lunchDuchSyntax, seventhCircleMarch]
+
+export default shows
