@@ -33,6 +33,14 @@ const Music:React.FC = () => {
             content="Feral Suits"
             itemProp="byArtist" 
             itemScope itemType="https://schema.org/MusicGroup" />
+            <div className="mobile-art">
+              <img 
+                itemProp="image"
+                className="album-art-mobile" 
+                src={album.art}
+                alt={`Album art for ${album.name}`}
+              />
+            </div>
           <div className="nav-and-title">
             <div className="title-section">
               <h3 itemProp="name">{album.name}</h3>
@@ -107,8 +115,8 @@ const Music:React.FC = () => {
           <div className="track-row" itemScope itemType="https://schema.org/MusicRecording">
             <meta content={`PT${Math.floor(track.duration / 60)}M${track.duration % 60}S`} />
             <meta content={album.name} itemType="inAlbum" />
-            <div>
-              <span style={{opacity: ".7"}}>{track.trackNumber} - </span>
+            <div style={{textAlign: "left"}}>
+              {album.type !== 'single' && <span style={{opacity: ".4"}}>{track.trackNumber} - </span>}
                 <span itemProp="name">
                   <span className="track-name">{track.name}</span> {createContributor(track)}
                 </span>
