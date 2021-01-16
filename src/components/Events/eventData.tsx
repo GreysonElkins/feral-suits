@@ -25,8 +25,8 @@ export class Event {
   about: string | string[]
   performers: Performer[]
   eventType: string
-  eventLink?: string
-  ticketLink?: string
+  eventLink?: string | undefined
+  ticketLink?: string | undefined
   locationAddress?: string
   cityState?: string
   price?: string
@@ -41,8 +41,8 @@ export class Event {
     about: string | string[],
     performers: Performer[],
     eventType: string,
-    eventLink: string,
-    ticketLink?: string,
+    eventLink: string | undefined,
+    ticketLink?: string | undefined,
     locationAddress?: string,
     cityState?: string,
     price?: string
@@ -85,7 +85,7 @@ const seventhCircleMarch = new Event(
   '11PM',
   'Feral Suits is celebrating their name change with some new songs, live at Seventh Circle, with a big cast of dear friends.',
   [milkOfMag, somedayBest, motelFrunz, blanchard],
-  'venue',
+  'cancelled',
   'https://www.facebook.com/events/585802978640122/',
   'https://7thcirclemusiccollective.org/event/milk-of-magnesia-someday-best-blanchard-feral-suits-motel-frunz-7c/',
   '2935 W 7th Ave',
@@ -121,7 +121,7 @@ const lostLakeGringo = new Event(
   [gringoStar, turvyOrgan],
   'venue',
   'facebook.com/events/1450341381734375/',
-  'https://ticketf.ly/2M1NJIJ',
+  'https://www.lost-lake.com/',
   '3602 E Colfax Ave',
   'Denver, CO',
   '$10'
@@ -137,7 +137,8 @@ const dazzlAlbumRelease = new Event(
   "In celebration of their first album, Feral Suits will be live-streaming a perfromance from one of the most emminent Jazz Clubs in the nation, Dazzle Denver. Tune in from the comfort of your home for good vibes.",
   [],
   'virtual',
-  'facebook.com',
+  // 'facebook.com',
+  undefined,
   'https://dazzledenver.com/live-streams/',
   '1512 Curtis Street',
   'Denver, CO',
