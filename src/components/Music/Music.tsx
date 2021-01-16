@@ -157,12 +157,14 @@ const Music:React.FC = () => {
       <>
         <div className="black-out"></div>
         <div className="lyric-container" onClick={() => {setDisplayLyrics(undefined)}}>
-          <div className="lyric-sheet" onClick={() => {}}>
-            {printLyrics()}
+          <div className="sheet-and-button">
+            <div className="lyric-sheet" onClick={() => {}}>
+              {printLyrics()}
+            </div>
+            <button className="close-button">
+              close
+            </button>
           </div>
-          <button className="close-button">
-            close
-          </button>
         </div>
       </>
     )
