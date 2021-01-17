@@ -1,4 +1,5 @@
 import React from 'react'
+import { format } from 'date-fns'
 
 import shows, { Event, Performer } from './eventData'
 import './Events.scss'
@@ -32,8 +33,11 @@ const Events:React.FC = () => {
             <h6 className="performers-list">with: {getPerformerList(show.performers)}</h6>
           }
           <div className="event-text">
-            <div className="start-date" itemProp="startDate">{console.log('The show dates and times need to be converted to ISO 8601 date format')}{show.date}</div>
-            <div>{show.startTime}-{show.endTime}</div>
+            <div className="start-date">
+              <meta itemProp="startDate" content={`${format(show.date, 'yyyy-MM-dd')}T${show.startTime}`} />
+              {format(show.date, 'MMMM dd, yyyy')}
+            </div>
+            <div>{printTimeRegular(show.startTime)} - {printTimeRegular(show.endTime)}</div>
             <div className="event-description">{show.about}</div>
             <div>
               {show.ticketLink &&
@@ -97,6 +101,19 @@ const Events:React.FC = () => {
       </span>
       {performersList}
     </span>
+  }
+
+  const printTimeRegular = (time:string) => {
+    const theHour = parseInt(time.slice(0, 2))
+    
+    if (theHour === 12) {
+      return `${time} PM`
+    } else if (theHour > 12) {
+      return `${theHour - 12}${time.slice(2, 5)} PM`
+    } else {
+      return `${time} AM`
+    }
+
   }
 
   const showEvents = ():React.ReactNode[] => {

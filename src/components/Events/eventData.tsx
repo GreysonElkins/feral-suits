@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+
 import circle from '../../assets/images/show-fliers/circle.jpg'
 import dutches from '../../assets/images/show-fliers/dutches.jpg'
 import gringo from '../../assets/images/show-fliers/gringo.jpg'
@@ -20,7 +22,7 @@ export class Event {
   title: string
   location: string
   image: string
-  date: string
+  date: Date
   startTime: string
   endTime: string
   about: string | string[]
@@ -36,7 +38,7 @@ export class Event {
     title: string,
     location: string,
     image: string,
-    date: string,
+    date: Date,
     startTime: string,
     endTime: string,
     about: string | string[],
@@ -81,9 +83,9 @@ const seventhCircleMarch = new Event(
   'Feral Suits @ Seventh Circle',
   'Seventh Circle Music Collective',
   circle,
-  '03/28/2020',
-  '7 PM',
-  '11PM',
+  new Date(2020, 3, 28),
+  '19:00',
+  '23:59',
   'Feral Suits is celebrating their name change with some new songs, live at Seventh Circle, with a big cast of dear friends.',
   [milkOfMag, somedayBest, motelFrunz, blanchard],
   'cancelled',
@@ -98,9 +100,9 @@ const lunchDuchSyntax = new Event(
   'Feral Suits with Lunch Dutchess',
   'Syntax Physic Opera',
   dutches,
-  '10/28/2018',
-  '8 PM',
-  '11:59PM',
+  new Date(2018, 10, 28),
+  '20:00',
+  '23:59',
   "Lunch Duchess (MN) returns to Denver after 2 years, bringing their angular brand of half-silly, half-cathartic grunge pop with them. With one moody new single from their upcoming album already out and another forthcoming, they're a band to keep an eye on!",
   [lunchDuchess, definitelyMaybe, specificOcean],
   'venue',
@@ -115,9 +117,9 @@ const lostLakeGringo = new Event(
   "Girngo Star's Album Release Party", 
   "Lost Lake and Colorado Public Radio's Open Air",
   gringo,
-  '09/25/2018',
-  '7 PM',
-  '11:59 PM',
+  new Date(2020, 9, 25),
+  '19:00',
+  '23:59',
   "Feral Suits is stoked to be supporting Gringo Start on their 2018 tour-stop in Denver CO - come around for some Tuesday night bangers.",
   [gringoStar, turvyOrgan],
   'venue',
@@ -132,9 +134,9 @@ const dazzlAlbumRelease = new Event(
   "Feral Suits Album Release Party",
   "Dazzle Denver",
   tempDazzle,
-  '03/01/2020',
-  '7 PM',
-  '8 PM',
+  new Date(2021, 3, 1),
+  '19:00',
+  '20:00',
   "In celebration of their first album, Feral Suits will be live-streaming a perfromance from one of the most emminent Jazz Clubs in the nation, Dazzle Denver. Tune in from the comfort of your home for good vibes.",
   [],
   'virtual',
@@ -150,9 +152,9 @@ const umsOne = new Event(
   "Feral Suits (Shuttles) at UMS",
   "Denver's Underground Music Showcase @ Moe's BBQ",
   umsPic,
-  '07/28/2018',
-  '9 PM',
-  '10 PM',
+  new Date(2018, 7, 28),
+  '21:00',
+  '22:00',
   "Feral Suits' debut show at Underground Music Showcase is going to be a kicker. Come meet the crew at Moe's BBQ.",
   [],
   'venue',
@@ -161,7 +163,6 @@ const umsOne = new Event(
   '472 Broadway, Denver, CO 80203',
   'Denver, CO',
   ''
-
 )
 
 const shows = [dazzlAlbumRelease, umsOne, lostLakeGringo, lunchDuchSyntax, seventhCircleMarch]
