@@ -110,7 +110,7 @@ const traipseSingle = new Album(
   <iframe 
     title="Traipse@bandcamp"
     style={{ border: 0, width: "100%", height: "120px" }}
-    src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/" 
+    src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict" 
     seamless
   >
     <a href="https://feralsuits.bandcamp.com/track/traipse-of-youth">
@@ -132,7 +132,7 @@ const spokaneSingle = new Album(
   <iframe 
     title="spokane@bandcamp"
     style={{ border: 0, width: "100%", height: "120px" }}
-    src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/" 
+    src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict" 
     seamless
   >
     <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie">
