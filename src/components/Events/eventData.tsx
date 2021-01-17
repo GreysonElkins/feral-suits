@@ -2,6 +2,7 @@ import circle from '../../assets/images/show-fliers/circle.jpg'
 import dutches from '../../assets/images/show-fliers/dutches.jpg'
 import gringo from '../../assets/images/show-fliers/gringo.jpg'
 import tempDazzle from '../../assets/images/show-fliers/temp-dazzle.jpg'
+import umsPic from '../../assets/images/show-fliers/ums.jpg'
 
 export class Performer {
   name: string
@@ -145,6 +146,24 @@ const dazzlAlbumRelease = new Event(
   'Free'
 )
 
-const shows = [dazzlAlbumRelease, lostLakeGringo, lunchDuchSyntax, seventhCircleMarch]
+const umsOne = new Event(
+  "Feral Suits (Shuttles) at UMS",
+  "Denver's Underground Music Showcase @ Moe's BBQ",
+  umsPic,
+  '07/28/2018',
+  '9 PM',
+  '10 PM',
+  "Feral Suits' debut show at Underground Music Showcase is going to be a kicker. Come meet the crew at Moe's BBQ.",
+  [],
+  'venue',
+  'https://www.facebook.com/events/240411439848093/',
+  'https://www.undergroundmusicshowcase.com/',
+  '472 Broadway, Denver, CO 80203',
+  'Denver, CO',
+  ''
+
+)
+
+const shows = [dazzlAlbumRelease, umsOne, lostLakeGringo, lunchDuchSyntax, seventhCircleMarch]
 
 export default shows
