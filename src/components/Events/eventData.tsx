@@ -117,13 +117,13 @@ const lostLakeGringo = new Event(
   "Girngo Star's Album Release Party", 
   "Lost Lake and Colorado Public Radio's Open Air",
   gringo,
-  new Date(2020, 9, 25),
+  new Date(2018, 9, 25),
   '19:00',
   '23:59',
   "Feral Suits is stoked to be supporting Gringo Start on their 2018 tour-stop in Denver CO - come around for some Tuesday night bangers.",
   [gringoStar, turvyOrgan],
   'venue',
-  'facebook.com/events/1450341381734375/',
+  'https://www.facebook.com/events/1450341381734375/',
   'https://www.lost-lake.com/',
   '3602 E Colfax Ave',
   'Denver, CO',
@@ -165,6 +165,11 @@ const umsOne = new Event(
   ''
 )
 
-const shows = [dazzlAlbumRelease, umsOne, lostLakeGringo, lunchDuchSyntax, seventhCircleMarch]
+const shows = [
+  // dazzlAlbumRelease,
+  umsOne, 
+  lostLakeGringo, 
+  lunchDuchSyntax, 
+  seventhCircleMarch]
 
 export default shows
