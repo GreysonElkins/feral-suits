@@ -15,6 +15,7 @@
 .title-section {
   display: flex;
   align-items: center;
+  font-family: 'Exo', sans-serif;
 }
 
 .album-length {
@@ -65,6 +66,7 @@ hr {
   border: none;
   font-weight: bold;
   font-size: 1.2em;
+  font-family: 'Exo', sans-serif;
 }
 
 .selected-info-button {
@@ -78,15 +80,20 @@ hr {
 
 .lyric-button {
   height: min-content;
+  padding: .2em;
 }
 
 .lyric-button, .close-button {
   font-size: .8em;
   color: $grayFour;
-  border: solid 2px $grayThree;
+  border: solid 1px $grayThree;
   border-radius: 5px;
   margin-top: 5px;
   margin-left: .5em;
+}
+
+.close-button {
+  background: $black;
 }
 
 .black-out {
@@ -143,6 +150,7 @@ hr {
 
 .track-name {
   font-weight: bold;
+  font-family: 'Exo', sans-serif;
 }
 
 .album-art-mobile {
