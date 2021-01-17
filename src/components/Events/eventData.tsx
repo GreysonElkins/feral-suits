@@ -1,5 +1,3 @@
-import { format } from 'date-fns'
-
 import circle from '../../assets/images/show-fliers/circle.jpg'
 import dutches from '../../assets/images/show-fliers/dutches.jpg'
 import gringo from '../../assets/images/show-fliers/gringo.jpg'
