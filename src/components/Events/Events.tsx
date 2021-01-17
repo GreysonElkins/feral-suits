@@ -1,10 +1,18 @@
-import React from 'react'
-import { format } from 'date-fns'
+import React, { useState } from 'react'
+import { format, compareAsc, isAfter, startOfToday, isBefore } from 'date-fns'
 
 import shows, { Event, Performer } from './eventData'
 import './Events.scss'
+import { start } from 'repl'
+
+enum eventView {
+  all = 'All',
+  previous = 'Previous',
+  upcoming = 'Upcoming'
+}
 
 const Events:React.FC = () => {
+  const [eventViewRange, setEventViewRange] = useState<eventView>(eventView.upcoming)
 
   const createEventCard = (show:Event) => (
     <div className={`event-card ${show.eventType === "cancelled" && "cancelled"}`} itemScope itemType="https://schema.org/MusicEvent">
@@ -79,9 +87,9 @@ const Events:React.FC = () => {
       if (performer.link) {
         return (
           <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup">
-            <a itemProp="sameAs" href={performer.link}>
+            , <a className="some-event-link" itemProp="sameAs" href={performer.link}>
               <span itemProp="name">
-                , {performer.name}
+                {performer.name}
               </span>
             </a>
           </span>
@@ -89,7 +97,7 @@ const Events:React.FC = () => {
       } else {
         return (
           <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup">
-            <span itemProp="name">{performer.name}</span>
+            <span itemProp="name">, {performer.name}</span>
           </span>
         )
       }
@@ -117,12 +125,58 @@ const Events:React.FC = () => {
   }
 
   const showEvents = ():React.ReactNode[] => {
-    return shows.map(show => createEventCard(show))
+    const sortedShows = sortEvents()
+    const whichShows = determineWhichEvents(sortedShows)
+    if (whichShows.length > 0) {
+      return whichShows.map(show => createEventCard(show))
+    } else {
+      return [
+        <p className="no-event-message">
+          There aren't any upcoming shows right now. 
+          <br /> 
+          Follow us on <a className="some-event-link" href="https://www.facebook.com/feralsuits">Facebook
+          </a> to see when more are announced
+          <br />
+          Or check back later! 
+        </p>]
+    }
+  }
+
+  const sortEvents = ():Event[] => {
+    return shows.sort((b, a) => compareAsc(a.date, b.date))
+  }
+
+  const determineWhichEvents = (sortedShows?: Event[]) => {
+    const allShows = sortedShows ? sortedShows : shows
+    if (eventViewRange === eventView.upcoming) {
+      return allShows.filter(show => isAfter(show.date, startOfToday()))
+    } else if (eventViewRange === eventView.previous) {
+      return allShows.filter(show => isBefore(show.date, startOfToday()))
+    } else {
+      return allShows
+    }
+  }
+
+  const showOtherEventFilterOptions = () => {
+    const options = [eventView.all, eventView.upcoming, eventView.previous]
+    const unselectedOptions = options.filter(option => option !== eventViewRange)
+    return unselectedOptions.map(option => (
+      <button
+        className="event-page-changer"
+        onClick={() => {
+          setEventViewRange(option)
+        }}
+      >
+        {option} Events
+      </button>
+    ))
   }
 
   return (
     <>
-     {showEvents()}
+      <h2>{eventViewRange} Events</h2> 
+      {showEvents()}
+      {showOtherEventFilterOptions()}
     </>
   )
 }

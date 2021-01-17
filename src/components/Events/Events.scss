@@ -31,6 +31,7 @@
   padding: .5em;
   text-align: left;
   background-color: $grayOne;
+  font-weight: normal;
 }
 
 .event-body {
@@ -92,4 +93,27 @@
     flex-direction: column-reverse;
     align-items: center;
   }
+}
+
+.event-page-changer {
+  background: none;
+  border: solid 2px $grayThree;
+  margin: 1em;
+  border-radius: 5px;
+  color: $grayFour;
+  font-weight: bold;
+}
+
+.no-event-message {
+  font-size: 1.1em;
+}
+
+.some-event-link {
+  color: $gold;
+  text-decoration: underline;
+  font-weight:normal;
+}
+
+.some-event-link:hover {
+  font-style: italic;
 }
