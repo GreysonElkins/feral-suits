@@ -17,7 +17,7 @@ const Events:React.FC = () => {
     <div 
       className={`event-card ${show.eventType === "cancelled" && "cancelled"}`} 
       itemScope itemType="https://schema.org/MusicEvent"
-      key={format(show.date, 'YYYYDDMM')}
+      key={format(show.date, 'yyyy-dd-MM')}
     >
       <h4 className="event-line-one">{show.title}
         {show.eventType === "cancelled" && 
@@ -179,7 +179,7 @@ const Events:React.FC = () => {
 
   return (
     <>
-      <h2>{eventViewRange} Events</h2> 
+      <h2 className="current-event-range">{eventViewRange} Events</h2> 
       {showEvents()}
       {showOtherEventFilterOptions()}
     </>
