@@ -16,7 +16,6 @@ const Events:React.FC = () => {
         }
       </h4>
       <div className="event-body">
-
         <div className="event-info">
           <h5 
             className="event-line-two"

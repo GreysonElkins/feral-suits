@@ -23,7 +23,6 @@
     background-color: $grayTwo;
     opacity: .75;
   }
-
 }
 
 .performers-list {
@@ -74,4 +73,23 @@
 
 .ticket-link {
   background-color: $purple
+}
+
+@media only screen and (max-width: 947px) {
+  .event-image {
+    width: 15em;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+
+  .event-image {
+    width: 10em;
+    height: 10em;
+  }
+
+  .event-body { 
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
