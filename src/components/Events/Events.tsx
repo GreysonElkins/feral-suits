@@ -3,7 +3,6 @@ import { format, compareAsc, isAfter, startOfToday, isBefore } from 'date-fns'
 
 import shows, { Event, Performer } from './eventData'
 import './Events.scss'
-import { start } from 'repl'
 
 enum eventView {
   all = 'All',
@@ -15,7 +14,11 @@ const Events:React.FC = () => {
   const [eventViewRange, setEventViewRange] = useState<eventView>(eventView.upcoming)
 
   const createEventCard = (show:Event) => (
-    <div className={`event-card ${show.eventType === "cancelled" && "cancelled"}`} itemScope itemType="https://schema.org/MusicEvent">
+    <div 
+      className={`event-card ${show.eventType === "cancelled" && "cancelled"}`} 
+      itemScope itemType="https://schema.org/MusicEvent"
+      key={format(show.date, 'YYYYDDMM')}
+    >
       <h4 className="event-line-one">{show.title}
         {show.eventType === "cancelled" && 
           <>
@@ -129,6 +132,7 @@ const Events:React.FC = () => {
     const whichShows = determineWhichEvents(sortedShows)
     if (whichShows.length > 0) {
       return whichShows.map(show => createEventCard(show))
+      // return []
     } else {
       return [
         <p className="no-event-message">
@@ -162,6 +166,7 @@ const Events:React.FC = () => {
     const unselectedOptions = options.filter(option => option !== eventViewRange)
     return unselectedOptions.map(option => (
       <button
+        key={`${option}-button`}
         className="event-page-changer"
         onClick={() => {
           setEventViewRange(option)

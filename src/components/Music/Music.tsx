@@ -25,7 +25,7 @@ const Music:React.FC = () => {
   const createAlbumCards = ():React.ReactNode[] => {
     return feralAlbums.albums.map((album) => {
       return (
-        <div className="album" itemScope itemType="https://schema.org/MusicAlbum">
+        <div className="album" itemScope itemType="https://schema.org/MusicAlbum" key={album.name}>
           <meta content={album.tracks.length.toString()}itemProp="numTracks" />
           <meta content="Rock" itemProp="genre" />
           <meta content={album.listenLink} itemProp="url" />
@@ -111,8 +111,12 @@ const Music:React.FC = () => {
   const createTrackList = (album:Album) => {
     const tracks = album.tracks.map((track) => {
       return (
-        <>
-          <div className="track-row" itemScope itemType="https://schema.org/MusicRecording">
+        <div key={track.name}>
+          <div 
+            key={`${album.name}-${track.trackNumber}`} 
+            className="track-row" 
+            itemScope itemType="https://schema.org/MusicRecording"
+          >
             <meta content={`PT${Math.floor(track.duration / 60)}M${track.duration % 60}S`} />
             <meta content={album.name} itemType="inAlbum" />
             <div style={{textAlign: "left"}}>
@@ -129,7 +133,7 @@ const Music:React.FC = () => {
             </button>
           </div>
           <hr style={{width: "100%"}}/> 
-        </>
+        </div>
       )
     })
 
@@ -139,11 +143,11 @@ const Music:React.FC = () => {
   const printLyrics = ():React.ReactNode => {
     let lyricSheet: React.ReactNode | undefined;
     if(Array.isArray(displayLyrics)) {
-      lyricSheet = displayLyrics.reduce((lyrics:React.ReactNode[], line):React.ReactNode[] => {
+      lyricSheet = displayLyrics.reduce((lyrics:React.ReactNode[], line, i):React.ReactNode[] => {
         if (line === " ") {
-          lyrics.push(<><br /></>)
+          lyrics.push(<span key={`${line}-${i}`}><br /></span>)
         } else {
-          lyrics.push(<>{line}<br /></>)
+          lyrics.push(<span key={`${line}-${i}`}>{line}<br /></span>)
         }
         return lyrics
       }, [])
@@ -181,9 +185,9 @@ const Music:React.FC = () => {
   const createContributor = (track:Track) => {
     let list;
     if (track.feature) {
-      list = track.feature.reduce((features:React.ReactNode[], feature):React.ReactNode[] => {
+      list = track.feature.reduce((features:React.ReactNode[], feature, i):React.ReactNode[] => {
         features.push(
-          <span itemType="https://schema.org/MusicRecording">
+          <span itemType="https://schema.org/MusicRecording" key={`feature-${i}`}>
             <meta content={track.name} itemProp="name" />
             <span itemProp="contributor" itemType="https://schema.org/MusicGroup" className="contributor">: {feature}</span>
           </span>
