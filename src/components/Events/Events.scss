@@ -41,7 +41,6 @@
 }
 
 .event-text {
-  // height: 100%;
   display: flex;
   flex-direction: column;
   padding: .5em;
@@ -49,6 +48,7 @@
 
 .event-image {
   width: 20em;
+  height: 20em;
 }
 
 .event-description {
@@ -82,6 +82,7 @@
 @media only screen and (max-width: 947px) {
   .event-image {
     width: 15em;
+    height: 15em;
   }
 }
 
