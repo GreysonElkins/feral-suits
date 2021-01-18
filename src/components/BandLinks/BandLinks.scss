@@ -1,12 +1,11 @@
-@media only screen and (max-width: 367px) {
+@media only screen and (max-width: 627px) {
   .external-icon {
-    width: 2em;
-    width: 2.2em;
-    margin: .5em 1em;
+    width: 1.8em;
+    margin: .5em .5em;
   }
 }
 
-@media only screen and (min-width: 368px) {
+@media only screen and (min-width: 628px) {
   .external-icon {
     width: 2.5em;
     margin: .75em 1.5em;
@@ -24,4 +23,3 @@
 .external-icon:hover {
   filter: grayscale(0%)
 }
- 
