@@ -1,0 +1,39 @@
+@import '../../assets/variables.scss';
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 2em auto;
+
+  label {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    opacity: .8;
+  }
+
+  > * {
+    margin: .2em;
+  }
+}
+
+.message-to-user {
+  color: $green;
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 1em;
+}
+
+.email-submit {
+  width: min-content;
+  margin: 1.5em auto;
+  background: $purple;
+  color: $grayFour;
+  border: none;
+  border-radius: 5px;
+  padding: .3em;
+  font-size: 1.1em;
+  font-family: 'Exo', sans-serif;
+  font-weight: bold;
+}
