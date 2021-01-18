@@ -1,0 +1,237 @@
+@import '../../assets/variables.scss';
+
+
+.album {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.nav-and-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  font-family: 'Exo', sans-serif;
+}
+
+.album-length {
+  opacity: .7;
+  margin: 0 .5em;
+}
+
+.more-info {
+  display: flex;
+  height: min-content;
+  margin-bottom: 2.5em;
+}
+
+.album-art {
+  width: 15em;
+  height: 15em;
+}
+
+.streaming-embed {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 10px;
+  
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  width: 100%;
+  max-height: 15em;
+  padding-left: 10px;
+}
+
+.track-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  opacity: .2;
+}
+
+.info-button, .selected-info-button, .close-button {
+  background: none;
+  color: $white; 
+  border: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: 'Exo', sans-serif;
+}
+
+.selected-info-button {
+  color: $gold;
+}
+
+.info-button, .selected-info-button {
+  padding: 0;
+  margin-left: .5em;
+}
+
+.lyric-button {
+  height: min-content;
+  padding: .2em;
+}
+
+.lyric-button, .close-button {
+  font-size: .8em;
+  color: $grayFour;
+  border: solid 1px $grayThree;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: .5em;
+}
+
+.close-button {
+  background: $black;
+}
+
+.black-out {
+  position: fixed;
+  background: $black;
+  // z-index: 500;
+  top: 0;
+  opacity: .7;
+  width: 100%;
+  height: 100%;
+}
+
+.lyric-sheet {
+  margin: 0 auto;
+  padding: .5em;
+  background: $grayFour;
+  color: black;
+  overflow: scroll;
+  text-align: left;
+  height: 30em;
+  width: 20em;
+}
+
+.sheet-and-button {
+  z-index: 1000;
+  position: fixed;
+}
+
+.lyric-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.lyric-cta {
+  z-index: 1000;
+  color: $white;
+}
+
+.intentional-link {
+  text-decoration: underline;
+  color: $gold;
+}
+
+.contributor {
+  font-style: italic;
+  font-size: .8em;
+}
+
+.track-name {
+  font-weight: bold;
+  font-family: 'Exo', sans-serif;
+}
+
+.album-art-mobile {
+  display: none;
+  width: 10em;
+  margin: .5em auto;
+  align: center;
+}
+
+.mobile-art {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 866px) {
+  .album-art {
+    height: 10em;
+    width: 10em;
+  }
+
+  .track-list {
+    max-height: 10em;
+  }
+}
+
+@media only screen and (max-width: 759px) {
+  .more-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .album-art {
+    display: none;
+  }
+
+  .album-art-mobile {
+    display: block;
+  }
+
+  .track-list {
+    padding-left: 0;
+  }
+
+  .album {
+    width: 70%;
+  }
+
+  .title-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-and-title {
+    margin-bottom: 1em;
+  }
+
+  .album-length {
+    margin-top: .2em;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .nav-and-title {
+    align-items: flex-start;
+  }
+
+  .title-section {
+    text-align: left;
+  }
+
+  .info-select {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    > * {
+      // padding-right: 0;
+    }
+  }
+
+}

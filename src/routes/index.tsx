@@ -1,4 +1,4 @@
-import aboutRoute from './about'
+import aboutRoute from './contact'
 import adminRoute from './admin'
 import eventsRoute from './events'
 import homeRoute from './home'
@@ -10,6 +10,6 @@ export type route = {
   component: React.FC
 }
 
-const allRoutes:route[] =  [aboutRoute, adminRoute, eventsRoute, homeRoute, musicRoute]
+const allRoutes:route[] =  [musicRoute, eventsRoute, aboutRoute, adminRoute, homeRoute]
 
 export default allRoutes
