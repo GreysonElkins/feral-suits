@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+<p align="center">
+  <h1 align="center" style="color:#C77E26">Feral Suits</h1>
+</p>
+  
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <a href="http://feralsuits.com">Site</a>
+  ·
+  <a href="https://github.com/GreysonElkins/feral-suits/issues">Report Bug</a>
+  ·
+  <a href="https://github.com/GreysonElkins/feral-suits/issues">Request Feature</a>
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started Locally](#getting-started-locally)
+  * [Installation](#local-installation)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [Contact](#contact)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### `npm test`
+Feral Suits is a website for a band I play in. It includes three main components, `Contact`, `Music`,`Events`. The later two are built to consume data with specific types, for ease of adding content. Both create custom schema-markup for each object - SEO was a learning goal for the project. In order to serve that data, <a href="https://github.com/geelen/react-snapshot">React-snapshot</a> was utilized. `Contact` makes use of `emailjs` and the app also uses `date-fns`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
+<center>
+<a href="https://reactjs.org">
+  <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+</a>
+<br />
+<a href="https://www.typescriptlang.org">
+ <img src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
+</a>
+<br />
+<a href="https://sass-lang.org">
+  <img src="https://img.shields.io/badge/SASS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/>
+</a>  
+<h2>📸 React Snapshot</h2>
+<h2>📆 Date-fns</h2>
+<h2>✉️ emailJS</h2>
+</center>
 
-### `npm run build`
+<!-- GETTING STARTED Locally -->
+## Getting Started Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Local Installation
+##### Prerequisites:
+* npm: (`npm install npm@latest -g`)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repo
+```sh
+git clone git@github.com:GreysonElkins/feral-suits.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Run the app!
+```sh
+npm run dev
+```
+4. Go to `localhost:3000` in your browser
 
-### `npm run eject`
+<!-- USAGE EXAMPLES -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- ROADMAP -->
+## Roadmap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+See the [open issues](https://github.com/GreysonElkins/feral-suits/issues) for a list of proposed features (and known issues).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- CONTRIBUTING -->
+## Contributing
 
-## Learn More
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- CONTACT -->
+## Contact
 
-### Code Splitting
+[Greyson Elkins](https://www.linkedin.com/in/greyson-elkins/) - greysonelkins@gmail.com  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/GreysonElkins/feral-suits.svg?style=flat-square
+[contributors-url]: https://github.com/GreysonElkins/feral-suits/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/GreysonElkins/feral-suits.svg?style=flat-square
+[forks-url]: https://github.com/GreysonElkins/feral-suits/network/members
+[stars-shield]: https://img.shields.io/github/stars/GreysonElkins/feral-suits.svg?style=flat-square
+[stars-url]: https://github.com/GreysonElkins/feral-suits/stargazers
+[issues-shield]: https://img.shields.io/github/issues/GreysonElkins/feral-suits.svg?style=flat-square
+[issues-url]: https://github.com/GreysonElkins/feral-suits/issues
+[license-shield]: https://img.shields.io/github/license/GreysonElkins/feral-suits.svg?style=flat-square
