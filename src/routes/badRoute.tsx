@@ -3,13 +3,13 @@ import { route } from './index'
 
 const noRoute:React.FC = () => {
   return (
-    <div>The page you're looking for does not exist.</div>
+    <div style={{color: "#6FEC73"}}>The page you're looking for does not exist.</div>
   )
 }
   
 const badRoute:route = {
   path: '*',
-  visible: true,
+  visible: false,
   component: noRoute 
 }
 
