@@ -135,7 +135,7 @@ const Events:React.FC = () => {
       // return []
     } else {
       return [
-        <p className="no-event-message">
+        <p className="no-event-message" key="no shows message">
           There aren't any upcoming shows right now. 
           <br /> 
           Follow us on <a className="some-event-link" href="https://www.facebook.com/feralsuits">Facebook
