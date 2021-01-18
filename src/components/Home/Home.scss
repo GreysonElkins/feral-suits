@@ -1,0 +1,10 @@
+.banner-container {
+  max-width: 100vw;
+  height: 65vh;
+  overflow: hidden;
+  > img {
+    margin-top: -10em;
+    object-fit: cover;
+    width: 100vw;
+  }
+}
