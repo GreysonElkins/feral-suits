@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom'
 import App from './App';
 
-test('renders coming soon component', () => {
+test('Should render the header', () => {
   render(<MemoryRouter><App /></MemoryRouter>);
-  const comingSoon = screen.getByText(/Coming Soon/i);
+  const comingSoon = screen.getByRole('heading', 'Feral Suits');
   expect(comingSoon).toBeInTheDocument();
 });
