@@ -1,4 +1,4 @@
-import aboutRoute from './about'
+import aboutRoute from './contact'
 import adminRoute from './admin'
 import eventsRoute from './events'
 import homeRoute from './home'
