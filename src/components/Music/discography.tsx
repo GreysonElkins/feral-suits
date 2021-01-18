@@ -175,7 +175,7 @@ const LPone = new Album("TBD", "TBA", undefined, tempArt, "record", '')
 
 LPone.addTracks([trackOne, trackTwo, trackThree, trackFour, trackFive, trackSix, trackSeven, trackEight, trackNine, trackTen])
 
-feralAlbums.addAlbum(LPone)
+// feralAlbums.addAlbum(LPone)
 feralAlbums.addAlbum(spokaneSingle)
 feralAlbums.addAlbum(traipseSingle)
 
