@@ -86,10 +86,10 @@ const Events:React.FC = () => {
   )
 
   const getPerformerList = (performers:Performer[]) => {
-    const performersList = performers.map(performer => {
+    const performersList = performers.map((performer, i) => {
       if (performer.link) {
         return (
-          <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup">
+          <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup" key={`performer-${performer.name}-${i}`}>
             , <a className="some-event-link" itemProp="sameAs" href={performer.link} target="_blank" rel="noreferrer">
               <span itemProp="name">
                 {performer.name}
@@ -99,7 +99,7 @@ const Events:React.FC = () => {
         ) 
       } else {
         return (
-          <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup">
+          <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup" key={`performer-${performer.name}-${i}`}>
             <span itemProp="name">, {performer.name}</span>
           </span>
         )
