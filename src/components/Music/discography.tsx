@@ -113,7 +113,7 @@ const traipseSingle = new Album(
     src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict" 
     seamless
   >
-    <a href="https://feralsuits.bandcamp.com/track/traipse-of-youth">
+    <a href="https://feralsuits.bandcamp.com/track/traipse-of-youth" target="_blank" rel="noreferrer">
       Traipse of Youth by Feral Suits
     </a>
   </iframe>,
@@ -135,7 +135,7 @@ const spokaneSingle = new Album(
     src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict" 
     seamless
   >
-    <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie">
+    <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie" target="_blank" rel="noreferrer">
       Spokane &amp; Poughkeepsie by Feral Suits
     </a>
   </iframe>,

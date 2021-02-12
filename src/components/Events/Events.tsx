@@ -52,7 +52,7 @@ const Events:React.FC = () => {
             <div className="event-description">{show.about}</div>
             <div>
               {show.ticketLink &&
-                <a href={show.ticketLink}>
+                <a href={show.ticketLink} target="_blank" rel="noreferrer">
                   <button 
                     itemProp="offers" 
                     itemScope 
@@ -65,7 +65,7 @@ const Events:React.FC = () => {
                 </a>
               }
               {show.eventLink &&
-                <a href={show.eventLink}>
+                <a href={show.eventLink} target="_blank" rel="noreferrer">
                   <button 
                     className="event-link" 
                   >
@@ -90,7 +90,7 @@ const Events:React.FC = () => {
       if (performer.link) {
         return (
           <span itemProp="performer" itemScope itemType="https://schema.org/MusicGroup">
-            , <a className="some-event-link" itemProp="sameAs" href={performer.link}>
+            , <a className="some-event-link" itemProp="sameAs" href={performer.link} target="_blank" rel="noreferrer">
               <span itemProp="name">
                 {performer.name}
               </span>
@@ -138,7 +138,7 @@ const Events:React.FC = () => {
         <p className="no-event-message" key="no shows message">
           There aren't any upcoming shows right now. 
           <br /> 
-          Follow us on <a className="some-event-link" href="https://www.facebook.com/feralsuits">Facebook
+          Follow us on <a className="some-event-link" href="https://www.facebook.com/feralsuits" target="_blank" rel="noreferrer">Facebook
           </a> to see when more are announced
           <br />
           Or check back later! 
