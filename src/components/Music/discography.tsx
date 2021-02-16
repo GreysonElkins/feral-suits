@@ -171,7 +171,7 @@ trackEight.addLyrics(hung)
 trackNine.addLyrics(anymore)
 trackTen.addLyrics(lavender)
 
-const LPone = new Album("TBD", "March 19, 2021", undefined, debutArt, "record", '')
+const LPone = new Album("Drown the Garden", "March 19, 2021", undefined, debutArt, "record", '')
 
 LPone.addTracks([trackOne, trackTwo, trackThree, trackFour, trackFive, trackSix, trackSeven, trackEight, trackNine, trackTen])
 

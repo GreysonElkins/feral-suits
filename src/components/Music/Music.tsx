@@ -15,7 +15,7 @@ const changeAlbumInfoView = (state: object, albumViewUpdate:albumViewUpdate):str
 const Music:React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [albumInfoView, dispatchAlbumInfoView] = useReducer(changeAlbumInfoView, {})
-  const [displayLyrics, setDisplayLyrics] = useState<string[] | undefined>(undefined)
+  const [displayLyrics, setDisplayLyrics] = useState<string[] | string | undefined>(undefined)
 
   useEffect(() => {
     feralAlbums.albums.forEach((album:Album) => dispatchAlbumInfoView({type: album.name}))
@@ -76,6 +76,9 @@ const Music:React.FC = () => {
               src={album.art} 
               alt={`Album art for ${album.name}`} 
               className="album-art"
+              onClick={() => {
+                setDisplayLyrics(album.art)
+              }}
               />
               {createMoreInfoSection(album)}
           </div>
@@ -162,8 +165,10 @@ const Music:React.FC = () => {
         <div className="black-out"></div>
         <div className="lyric-container" onClick={() => {setDisplayLyrics(undefined)}}>
           <div className="sheet-and-button">
-            <div className="lyric-sheet" onClick={() => {}}>
-              {printLyrics()}
+            <div className={Array.isArray(displayLyrics) ? "lyric-sheet" : "art-sheet"} onClick={() => {}}>
+              {
+                printLyricsOrArt()
+              }
             </div>
             <button className="close-button">
               close
@@ -172,6 +177,16 @@ const Music:React.FC = () => {
         </div>
       </>
     )
+  }
+
+  const printLyricsOrArt = ():React.ReactNode => {
+    if (Array.isArray(displayLyrics)) {
+      return printLyrics() 
+    } else {
+      return (
+        <img src={displayLyrics} alt="close up of album art"/>
+      )
+    }
   }
 
   const selectInfoButton = (albumName:string, type:string):string => {

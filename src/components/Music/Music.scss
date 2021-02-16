@@ -114,7 +114,21 @@ hr {
   overflow: scroll;
   text-align: left;
   height: 30em;
-  width: 20em;
+  width: 20em;  
+}
+
+.art-sheet {
+  margin: 0 auto;
+  padding: .5em;
+  color: black;
+  overflow: hidden;
+  text-align: left;
+  height: 30em;
+  width: 30em; 
+  > img {
+    width: 30em;
+    height: 30em;
+  } 
 }
 
 .sheet-and-button {
