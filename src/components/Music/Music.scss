@@ -243,10 +243,14 @@ hr {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-
-    > * {
-      // padding-right: 0;
-    }
   }
 
+  .art-sheet {
+    width: 20em;
+    height: 20em;
+    > img {
+      width: 20em;
+      height: 20em;
+    }
+  }
 }

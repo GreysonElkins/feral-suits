@@ -39,6 +39,7 @@ const Music:React.FC = () => {
                 className="album-art-mobile" 
                 src={album.art}
                 alt={`Album art for ${album.name}`}
+                onClick={() => {setDisplayLyrics(album.art)}}
               />
             </div>
           <div className="nav-and-title">
