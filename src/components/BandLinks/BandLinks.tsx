@@ -28,6 +28,8 @@ const BandLinks:React.FC<linkProps> = ({ requestedLinkItems, providedLinkItems }
         href={link} 
         title={title} 
         key={`${name}-link`}
+        target="_blank"
+        rel='noreferrer'
       >
         <img 
           className="external-icon"
