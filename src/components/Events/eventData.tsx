@@ -1,7 +1,7 @@
 import circle from '../../assets/images/show-fliers/circle.jpg'
 import dutches from '../../assets/images/show-fliers/dutches.jpg'
 import gringo from '../../assets/images/show-fliers/gringo.jpg'
-import tempDazzle from '../../assets/images/show-fliers/temp-dazzle.jpg'
+import dazzle from '../../assets/images/FERALSUITSart.png'
 import umsPic from '../../assets/images/show-fliers/ums.jpg'
 
 export class Performer {
@@ -128,14 +128,14 @@ const lostLakeGringo = new Event(
   '$10'
 )
 
-const dazzlAlbumRelease = new Event(
+const dazzleAlbumRelease = new Event(
   "Feral Suits Album Release Party",
   "Dazzle Denver",
-  tempDazzle,
-  new Date(2021, 3, 1),
+  dazzle,
+  new Date(2021, 3, 21),
   '19:00',
   '20:00',
-  "In celebration of their first album, Feral Suits will be live-streaming a perfromance from one of the most emminent Jazz Clubs in the nation, Dazzle Denver. Tune in from the comfort of your home for good vibes.",
+  'In celebration of the release of their first album, "Drown the Garden", Feral Suits will be live-streaming a performance from one of the most eminent jazz clubs in the nation, Dazzle Denver. Tune in from the comfort of your home for good vibes.',
   [],
   'virtual',
   // 'facebook.com',
@@ -164,7 +164,7 @@ const umsOne = new Event(
 )
 
 const shows = [
-  // dazzlAlbumRelease,
+  dazzleAlbumRelease,
   umsOne, 
   lostLakeGringo, 
   lunchDuchSyntax, 

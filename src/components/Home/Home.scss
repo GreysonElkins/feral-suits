@@ -9,6 +9,19 @@
   }
 }
 
+.album-announcement {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.big-album-art {
+  width: 25em;
+  height: 25em;
+}
+
 @media only screen and (max-width: 816px) {
   .banner-container {
     padding: 6em 0;
@@ -25,4 +38,10 @@
     padding: 6em 0;
     height: min-content;
   }
+
+  .big-album-art {
+  width: 20em;
+  height: 20em;
+}
+
 }
