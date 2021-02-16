@@ -1,6 +1,6 @@
 import traipseArt from '../../assets/images/traipse.jpg'
 import spokaneArt from '../../assets/images/spokane.jpg'
-import tempArt from '../../assets/images/namer1.jpg'
+import debutArt from '../../assets/images/FERALSUITSart.png'
 
 import { 
   traipseLyrics, 
@@ -171,7 +171,7 @@ trackEight.addLyrics(hung)
 trackNine.addLyrics(anymore)
 trackTen.addLyrics(lavender)
 
-const LPone = new Album("TBD", "TBA", undefined, tempArt, "record", '')
+const LPone = new Album("TBD", "March 19, 2021", undefined, debutArt, "record", '')
 
 LPone.addTracks([trackOne, trackTwo, trackThree, trackFour, trackFive, trackSix, trackSeven, trackEight, trackNine, trackTen])
 
