@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // import lostLakeImg from '../../assets/images/lost-lake.jpg'
-import albumArt from '../../assets/images/album-art.gif'
+import albumArt from '../../assets/images/FERALSUITSart.png'
 
 import './Home.scss'
 
