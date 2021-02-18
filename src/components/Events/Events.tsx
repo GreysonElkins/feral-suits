@@ -13,6 +13,20 @@ enum eventView {
 const Events:React.FC = () => {
   const [eventViewRange, setEventViewRange] = useState<eventView>(eventView.upcoming)
 
+  const populateExtraButtons = (show:Event):React.ReactNode[] => {
+    return show.moreButtons.map(button => {
+      return (
+        <a href={button.link} target="_blank" rel="noreferrer">
+          <button 
+            className="event-link extra-link" 
+          >
+            {button.title}
+          </button>
+        </a>
+      )
+    })
+  }
+
   const createEventCard = (show:Event) => (
     <div 
       className={`event-card ${show.eventType === "cancelled" && "cancelled"}`} 
@@ -64,12 +78,15 @@ const Events:React.FC = () => {
                   </button>
                 </a>
               }
+              {show.moreButtons.length > 0 &&
+                populateExtraButtons(show)
+              }
               {show.eventLink &&
                 <a href={show.eventLink} target="_blank" rel="noreferrer">
                   <button 
                     className="event-link" 
                   >
-                    Event
+                    Facebook Event
                   </button>
                 </a>
               }
