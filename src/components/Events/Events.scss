@@ -75,7 +75,15 @@
   margin: .2em;
 }
 
+button {
+  cursor: pointer;
+}
+
 .ticket-link {
+  background-color: $gold
+}
+
+.extra-link {
   background-color: $purple
 }
 

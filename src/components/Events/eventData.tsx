@@ -3,6 +3,7 @@ import dutches from '../../assets/images/show-fliers/dutches.jpg'
 import gringo from '../../assets/images/show-fliers/gringo.jpg'
 import dazzle from '../../assets/images/FERALSUITSart.png'
 import umsPic from '../../assets/images/show-fliers/ums.jpg'
+import { findByTitle } from '@testing-library/react'
 
 export class Performer {
   name: string
@@ -31,6 +32,7 @@ export class Event {
   locationAddress?: string
   cityState?: string
   price?: string
+  moreButtons: Array<{title: string, link: string}>
 
   constructor (
     title: string,
@@ -62,6 +64,11 @@ export class Event {
     this.locationAddress = locationAddress
     this.cityState = cityState
     this.price = price
+    this.moreButtons = []
+  }
+
+  addLink(title: string, link: string) {
+    this.moreButtons.push({title: title, link: link})
   }
 }
 
@@ -133,18 +140,19 @@ const dazzleAlbumRelease = new Event(
   "Dazzle Denver",
   dazzle,
   new Date(2021, 2, 21),
-  '19:00',
-  '20:00',
-  'In celebration of the release of their first album, "Drown the Garden", Feral Suits will be live-streaming a performance from one of the most eminent jazz clubs in the nation, Dazzle Denver. Tune in from the comfort of your home for good vibes.',
+  '18:30',
+  '19:30',
+  'In celebration of the release of their first album, "Drown the Garden", Feral Suits will be performing from one of the most eminent jazz clubs in the nation, Dazzle Denver. The show is open to a ticketed audience, but also will be available to stream for free! So come on down and have a drink, or tune in from the comfort of your home for good vibes.',
   [],
   'virtual',
-  // 'facebook.com',
-  undefined,
-  'https://dazzledenver.com/live-streams/',
+  'https://www.facebook.com/events/216428496892010',
+  'https://dazzledenver.com/on-stage-events/',
   '1512 Curtis Street',
   'Denver, CO',
   'Free'
 )
+
+dazzleAlbumRelease.addLink('Stream', 'https://www.facebook.com/DazzleDenver')
 
 const umsOne = new Event(
   "Feral Suits (Shuttles) at UMS",
