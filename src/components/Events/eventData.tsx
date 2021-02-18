@@ -146,7 +146,7 @@ const dazzleAlbumRelease = new Event(
   [],
   'virtual',
   'https://www.facebook.com/events/216428496892010',
-  'https://dazzledenver.com/on-stage-events/',
+  'https://www.venuepilot.co/events/38353/orders/new',
   '1512 Curtis Street',
   'Denver, CO',
   'Free'
