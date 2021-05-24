@@ -179,9 +179,9 @@ const lostLakeTwo = new Event(
   new Date(2021, 6, 11),
   '18:00',
   '19:00',
-  `Lost Lake Presents Feral Suits Sunday, July 11 <br />
-  Early show: Doors 5pm / Show 6pm <br />
-  Late show: Doors 830pm / Show 9pm <br />
+  `Lost Lake Presents Feral Suits Sunday, July 11 //
+  EARLY SHOW: Doors 5pm / Show 6pm //
+  LATE SHOW: Doors 830pm / Show 9pm 
   `,
   [],
   'venue',
