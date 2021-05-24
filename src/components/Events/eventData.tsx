@@ -4,6 +4,7 @@ import gringo from '../../assets/images/show-fliers/gringo.jpg'
 import dazzle from '../../assets/images/FERALSUITSart.png'
 import umsPic from '../../assets/images/show-fliers/ums.jpg'
 import { findByTitle } from '@testing-library/react'
+import lakePaint from '../../assets/images/show-fliers/lost-lake-paint.png'
 
 export class Performer {
   name: string
@@ -171,11 +172,33 @@ const umsOne = new Event(
   ''
 )
 
+const lostLakeTwo = new Event(
+  'Two Sets with Feral Suits',
+  'Lost Lake',
+  lakePaint,
+  new Date(2021, 6, 11),
+  '18:00',
+  '19:00',
+  `Lost Lake Presents Feral Suits Sunday, July 11 <br />
+  Early show: Doors 5pm / Show 6pm <br />
+  Late show: Doors 830pm / Show 9pm <br />
+  `,
+  [],
+  'venue',
+  'https://www.facebook.com/events/460192995092055',
+  '',
+  '3602 E Colfax Ave, Denver',
+  'Denver, CO',
+  ''
+)
+
 const shows = [
   dazzleAlbumRelease,
   umsOne, 
   lostLakeGringo, 
   lunchDuchSyntax, 
-  seventhCircleMarch]
+  seventhCircleMarch,
+  lostLakeTwo
+]
 
 export default shows
