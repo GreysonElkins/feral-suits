@@ -2,32 +2,28 @@ import traipseArt from '../../assets/images/traipse.jpg'
 import spokaneArt from '../../assets/images/spokane.jpg'
 import debutArt from '../../assets/images/FERALSUITSart.png'
 
-import { 
-  traipseLyrics, 
-  firstCar, 
-  spokaneLyrics, 
-  funk, 
-  soft, 
-  nextToMe, 
-  light, 
-  daybreaker, 
-  hung, 
-  anymore, 
-  lavender 
+import {
+  traipseLyrics,
+  firstCar,
+  spokaneLyrics,
+  funk,
+  soft,
+  nextToMe,
+  light,
+  daybreaker,
+  hung,
+  anymore,
+  lavender,
 } from './lyrics'
 
-export class Track { 
+export class Track {
   name: string
   duration: number
   lyrics: string[]
   trackNumber: number
   feature?: string[] | undefined
 
-  constructor(
-    name:string,
-    trackNumber: number,
-    duration: number,
-  ) {
+  constructor(name: string, trackNumber: number, duration: number) {
     this.name = name
     this.trackNumber = trackNumber
     this.duration = duration
@@ -35,7 +31,7 @@ export class Track {
     this.feature = undefined
   }
 
-  addLyrics = (lyrics:string[]) => {
+  addLyrics = (lyrics: string[]) => {
     this.lyrics = lyrics
   }
 
@@ -46,43 +42,43 @@ export class Track {
 
 export class Album {
   name: string
-  releaseDate: string 
+  releaseDate: string
   streamEmbed: React.ReactNode
   art: string | undefined
   tracks: Track[]
-  type:string
-  listenLink:string
+  type: string
+  listenLink: string
 
   constructor(
-    name:string, 
-    releaseDate:string, 
-    streamEmbed:React.ReactNode | undefined, 
-    art:string | undefined,
-    type:string,
-    listenLink:string
-    ) {
-      this.name = name 
-      this.releaseDate = releaseDate
-      this.art = art
-      this.tracks = []
-      this.type = type
-      this.streamEmbed = streamEmbed 
-      this.listenLink = listenLink
-    }
+    name: string,
+    releaseDate: string,
+    streamEmbed: React.ReactNode | undefined,
+    art: string | undefined,
+    type: string,
+    listenLink: string
+  ) {
+    this.name = name
+    this.releaseDate = releaseDate
+    this.art = art
+    this.tracks = []
+    this.type = type
+    this.streamEmbed = streamEmbed
+    this.listenLink = listenLink
+  }
 
-  addTrack = (track:Track) => {
+  addTrack = (track: Track) => {
     this.tracks.push(track)
   }
 
-  addTracks = (tracks:Track[]) => {
+  addTracks = (tracks: Track[]) => {
     this.tracks = this.tracks.concat(tracks)
   }
 
-  printDuration = ():string => {
-    const inSeconds = this.tracks.reduce((totalTime, track):number => {
+  printDuration = (): string => {
+    const inSeconds = this.tracks.reduce((totalTime, track): number => {
       totalTime += track.duration
       return totalTime
-    }, 0) 
+    }, 0)
 
     return `${Math.floor(inSeconds / 60)}:${inSeconds % 60}`
   }
@@ -94,71 +90,81 @@ class Discography {
     this.albums = []
   }
 
-  addAlbum = (album:Album) => {
+  addAlbum = (album: Album) => {
     this.albums.push(album)
   }
 }
 
-const feralAlbums = new Discography() 
+const feralAlbums = new Discography()
 
-const traipseOfYouth = new Track("Traipse of Youth", 0, 248) 
+const traipseOfYouth = new Track('Traipse of Youth', 0, 248)
 traipseOfYouth.addLyrics(traipseLyrics)
 
 const traipseSingle = new Album(
-  "Traipse of Youth", 
-  "July 20 2018", 
-  <iframe 
-    title="Traipse@bandcamp"
-    style={{ border: 0, width: "100%", height: "120px" }}
-    src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict" 
-    seamless
-  >
-    <a href="https://feralsuits.bandcamp.com/track/traipse-of-youth" target="_blank" rel="noreferrer">
-      Traipse of Youth by Feral Suits
-    </a>
-  </iframe>,
+  'Traipse of Youth',
+  'July 20 2018',
+  (
+    <iframe
+      title="Traipse@bandcamp"
+      style={{ border: 0, width: '100%', height: '120px' }}
+      src="https://bandcamp.com/EmbeddedPlayer/track=1173907805/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict"
+      seamless
+    >
+      <a
+        href="https://feralsuits.bandcamp.com/track/traipse-of-youth"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Traipse of Youth by Feral Suits
+      </a>
+    </iframe>
+  ),
   traipseArt,
-  "single",
+  'single',
   'https://feralsuits.bandcamp.com/track/traipse-of-youth'
-  )
+)
 
 traipseSingle.addTrack(traipseOfYouth)
 
-const spokane = new Track("Spokane & Poughkeepsie", 0, 168)
+const spokane = new Track('Spokane & Poughkeepsie', 0, 168)
 spokane.addLyrics(spokaneLyrics)
 const spokaneSingle = new Album(
-  "Spokane & Poughkeepsie", 
-  "January 20, 2020", 
-  <iframe 
-    title="spokane@bandcamp"
-    style={{ border: 0, width: "100%", height: "120px" }}
-    src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict" 
-    seamless
-  >
-    <a href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie" target="_blank" rel="noreferrer">
-      Spokane &amp; Poughkeepsie by Feral Suits
-    </a>
-  </iframe>,
+  'Spokane & Poughkeepsie',
+  'January 20, 2020',
+  (
+    <iframe
+      title="spokane@bandcamp"
+      style={{ border: 0, width: '100%', height: '120px' }}
+      src="https://bandcamp.com/EmbeddedPlayer/track=806203346/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/SameSite=Strict"
+      seamless
+    >
+      <a
+        href="https://feralsuits.bandcamp.com/track/spokane-poughkeepsie"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Spokane &amp; Poughkeepsie by Feral Suits
+      </a>
+    </iframe>
+  ),
   spokaneArt,
-  "single",
+  'single',
   'https://feralsuits.bandcamp.com/track/spokane-poughkeepsie'
-  ) 
-  
+)
+
 spokaneSingle.addTrack(spokane)
 
-
-
-const trackOne = new Track("My First Car", 1, 240)
+const trackOne = new Track('My First Car', 1, 240)
 const trackTwo = spokane
 trackTwo.trackNumber = 2
-const trackThree = new Track("From a Funk", 3, 210)
-const trackFour = new Track("Soft Spot", 4, 350)
-const trackFive = new Track("Next To Me (Homely)", 5, 329)
-const trackSix = new Track("Light", 6, 258)
-const trackSeven = new Track("Daybreaker", 7, 267)
-const trackEight = new Track("Hung by the Hook", 8, 199)
-const trackNine = new Track("Anymore", 9, 384)
-const trackTen = new Track("Lavender Rabbits", 10, 314)
+const trackThree = new Track('From a Funk', 3, 210)
+const trackFour = new Track('Soft Spot', 4, 350)
+const trackFive = new Track('Next To Me (Homely)', 5, 329)
+const trackSix = new Track('Light', 6, 258)
+const trackSeven = new Track('Daybreaker', 7, 267)
+const trackEight = new Track('Hung by the Hook', 8, 199)
+const trackNine = new Track('Anymore', 9, 384)
+const trackTen = new Track('Lavender Rabbits', 10, 314)
 
 trackOne.addLyrics(firstCar)
 trackThree.addLyrics(funk)
@@ -171,12 +177,50 @@ trackEight.addLyrics(hung)
 trackNine.addLyrics(anymore)
 trackTen.addLyrics(lavender)
 
-const LPone = new Album("Drown the Garden", "March 19, 2021", undefined, debutArt, "record", '')
+const LPone = new Album(
+  'Drown the Garden',
+  'March 19, 2021',
+  (
+    <iframe
+      style={{ width: '100%', height: '100%', minHeight: "200px" }}
+      title="DTG player"
+      src="https://open.spotify.com/embed/album/4Nt3KrOwuHSeO6C6WkJ4bw"
+      frameBorder="0"
+      // allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
+  ),
+  debutArt,
+  'record',
+  ''
+)
 
-LPone.addTracks([trackOne, trackTwo, trackThree, trackFour, trackFive, trackSix, trackSeven, trackEight, trackNine, trackTen])
+LPone.addTracks([
+  trackOne,
+  trackTwo,
+  trackThree,
+  trackFour,
+  trackFive,
+  trackSix,
+  trackSeven,
+  trackEight,
+  trackNine,
+  trackTen,
+])
 
 feralAlbums.addAlbum(LPone)
 feralAlbums.addAlbum(spokaneSingle)
 feralAlbums.addAlbum(traipseSingle)
 
 export default feralAlbums
+
+// const frame = (
+//   <iframe
+//     style={{ border: '0', width: '100%', height: '120px' }}
+//     title="SS player"
+//     src="https://bandcamp.com/EmbeddedPlayer/track=1383317983/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=none/transparent=true/"
+//     seamless
+//   >
+//     <a href="https://feralsuits.bandcamp.com/track/soft-spot-2">Soft Spot by Feral Suits</a>
+//   </iframe>
+// )
