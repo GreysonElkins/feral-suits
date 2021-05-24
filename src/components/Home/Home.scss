@@ -1,3 +1,5 @@
+@import '../../assets/variables.scss';
+
 .banner-container {
   max-width: 100vw;
   height: 65vh;
@@ -14,6 +16,16 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.cta-text {
+  > a {
+    text-decoration: underline;
+
+    &:hover {
+      color: $gold;
+    }
+  }
 }
 
 
