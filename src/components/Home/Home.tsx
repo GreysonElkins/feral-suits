@@ -10,16 +10,21 @@ const Home:React.FC = () => {
   return (
     <div className="album-announcement">
       <Link to="/music">
-      <img 
-        className="big-album-art"
-        src={albumArt} 
-        alt="Album art for the forthcoming Feral Suits record"
-      />
+        <img
+          className="big-album-art"
+          src={albumArt}
+          alt="Album art for the forthcoming Feral Suits record"
+        />
       </Link>
       <span>
-      Feral Suits' debut record <b>"Drown the Garden"</b> comes out March 19, 2021
+        Feral Suits' debut record <b>"Drown the Garden"</b> is out
       </span>
-      follow us on your favorite platform and keep an eye out for it
+      <span className="cta-text">
+        listen to it{' '}
+        <a href="https://album.link/i/1556008426" target="_blank" rel="noreferrer">
+          anywhere
+        </a>
+      </span>
     </div>
   )
 }
